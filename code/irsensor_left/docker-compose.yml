@@ -1,0 +1,14 @@
+version: "3"
+services:
+  irsensor_left:
+    container_name: irsensor_left
+    build: .
+    environment:
+      - MQTT_HOST=mqtt-broker
+      - MQTT_PORT=1883
+    privileged: true
+
+networks:
+    default:
+        external:
+            name: ab2-network
